@@ -6,7 +6,7 @@ var number, bumpOnly;
 
 for (var i = 2; i < process.argv.length; i++) {
   if (process.argv[i] == "-bump") bumpOnly = true;
-  else if (/^\d+\.\d+\.\d+$/.test(process.argv[i])) number = process.argv[i];
+  else if (/^\d+\.\d+\.\d+(-\w+)?$/.test(process.argv[i])) number = process.argv[i];
   else { console.log("Bogus command line arg: " + process.argv[i]); process.exit(1); }
 }
 
